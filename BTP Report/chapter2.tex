@@ -1,0 +1,57 @@
+\chapter{Literature Survey}
+In this chapter, we review the key research papers and studies that are relevant to our project. This survey highlights the foundational theories, methodologies, and findings that inform and support our work.
+
+The paper [1] presents a computational framework for analyzing Kathakali videos. The authors fine-tune existing models such as YOLOv5, DeepLabV3+, and HRNetv2 on a manually annotated dataset of Kathakali faces. The study achieves impressive results, with a mAP@0.5 of 0.997 for face detection, 0.9847 mIoU for face segmentation, and 0.0175 normalized mean error for landmark detection. This research addresses the challenges of object detection in Kathakali performances, demonstrating effective adaptations of existing models to this unique art form. However, the dataset's limited scope, focusing on specific character types, highlights the need for more comprehensive data collection in future studies.
+
+The paper [2] introduces Convolutional Pose Machines, a sequential prediction framework using CNNs for pose estimation. Tested on standard datasets like MPII, LSP, and FLIC, the model achieves state-of-the-art performance with 87.95\% PCKh on MPII and 84.32\% PCK on LSP. The study addresses the vanishing gradient problem through intermediate supervision. While the model focuses on generic human poses, its approach to handling occlusions could be valuable for analyzing classical performing arts with complex costumes and poses. However, its generalizability to specialized datasets like Kathakali remains to be tested.
+
+The paper [3] focuses on detecting and classifying Indian classical Bharath
+-anatyam mudras using YOLOv3. The manually annotated dataset, including data augmentation, allows the system to achieve a 73\% mean average precision. This study demonstrates the potential of applying object detection algorithms to specific hand gestures, body poses, and facial expressions in classical dance forms. However, the lower precision for some mudra classes highlights the ongoing challenges in recognizing intricate gestures, suggesting a need for more refined models or larger, more diverse datasets.
+
+The paper [4] introduces HigherHRNet, a scale-aware representation learning model for bottom-up human pose estimation. Tested on COCO and CrowdPose datasets, it achieves 70.5\% Average Precision on COCO test-dev and 67.6\% on CrowdPose. The model's scale-aware learning and multi-resolution aggregation make it particularly suitable for precise pose detection in classical dance, even in crowded scenes. However, its performance may be affected by extreme occlusions and challenging lighting conditions, common in theatrical performances.
+
+The paper [5] presents an efficient object localization method using Convolutional Networks. The multi-resolution ConvNet approach, tested on FLIC and MPII datasets, significantly improves joint detection accuracy. The use of heat-map-based detection and a refinement network reduces prediction errors to near human-labeling variance levels. This approach could be directly applicable to pose detection in classical performing arts, offering high spatial precision. However, the model's struggle with fine detection in ambiguous or occluded regions may present challenges when applied to complex classical dance forms.
+
+The paper [6] applies human posture recognition and classification to performing arts education using CNNs and Long Short-Term Memory networks. By combining these deep learning techniques with Kinect technology, the authors achieve real-time, accurate posture recognition, enhancing the capture of expressive movements in performing arts. This integrated approach could significantly improve pose detection accuracy in complex classical dance movements. However, challenges remain in handling occlusions in real-time movements and ensuring accuracy in resource-constrained environments.
+
+The paper [7] develops a deep learning-based system for human body posture recognition and tracking using unmanned aerial vehicles. The approach combines YOLOv3 for object detection, DeepSORT for appearance information integration, and OpenPose for skeletal point extraction. Achieving 95.2\% accuracy in posture recognition, the system demonstrates robustness in outdoor environments and effective occlusion handling. The use of DeepSORT could be particularly relevant for managing occlusions prevalent in Kathakali due to elaborate costumes.
+
+The paper [8] applies a Convolutional Neural Network with a multi-residual modular architecture to human posture recognition in physical training guidance. The model, built on a stacked hourglass network with improved modules, achieves a 3-10\% improvement in accuracy when tested on standard datasets like LSP, MPII, and MS COCO. While the model shows promise, its focus on single-athlete pose estimation limits its applicability to scenarios involving multiple performers, a common situation in classical performing arts.
+
+% \section{Section-1 Name}
+% \begin{definition}\label{abc}
+% Some definition....
+% \end{definition}
+
+% \begin{remark}
+% Some remark.......
+% \end{remark}
+
+
+
+% \begin{theorem}
+% Some theorem.......
+% \end{theorem}
+
+% \begin{proof}
+% Proof is as follows....
+% \end{proof}
+
+% \section{Section-2 Name}
+% \begin{definition}\label{abc}
+% Some definition....
+% \end{definition}
+
+% \begin{remark}
+% Some remark.......
+% \end{remark}
+
+% \subsection{Subsection name}
+
+% \begin{theorem}
+% Some theorem.......
+% \end{theorem}
+
+% \begin{proof}
+% Proof is as follows....
+% \end{proof}

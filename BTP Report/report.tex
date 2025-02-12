@@ -1,0 +1,237 @@
+\documentclass[12pt,a4wide]{report}
+\usepackage{graphicx}
+\usepackage{amsthm,amssymb,mathrsfs,setspace,pstcol}%amsmath, latexsym,footmisc
+\usepackage{listings}  % For code listings
+\usepackage{play}
+\usepackage{epsfig}
+\usepackage{geometry}
+%\usepackage[grey,times]{quotchap}
+\usepackage[nottoc]{tocbibind}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%
+
+\input xy
+\xyoption{all}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{notation}[theorem]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+
+%\pagenumbering{arabic} \setcounter{page}{1}
+
+% --------------- Title page -----------------------
+\begin{titlepage}
+\enlargethispage{2cm}
+
+\begin{center}
+
+\vspace*{-2cm}
+
+\textbf{\Large Pose Detection and Landmarking in Classical Performing Arts  
+}\\[10pt]
+
+\vspace*{2 cm}
+
+
+                         A Project Report Submitted \\
+                     in Partial Fulfilment of the Requirements  \\
+                     for the Degree of  \\
+                          \vspace{4.5mm}
+                   {\Large \bf Bachelor of Technology } \\
+                   in \\
+                   {\large \bf Computer Science and Engineering } \\
+
+                      \vspace{8mm}
+                   {\em  by} \\ \vspace{2.5mm}
+             {\large \bf Muhamed Yasin - 2021BCS0002} \\
+             {\large \bf Vijay J - 2021BCS0101} \\
+             {\large \bf Abhishek Porwal - 2021BCS0029} \\
+             {\large \bf Vikas Kushwaha - 2021BCS0021} \\
+
+\vfill
+%\includegraphics[width=12cm, height=12cm]{iiserlogo}
+
+\begin{figure}[h]
+% \includegraphics[width=15mm,height=10mm]{time_arma_gs.jpg}
+  \begin{center}
+  \includegraphics[width=6cm, height=3cm]{logo2.jpg}
+  \end{center}
+\end{figure}
+\vspace*{0.2cm}
+{\em\large to }\\%[8pt]
+{\bf \mbox{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}} \\%[4pt]
+{\bf \mbox{INDIAN INSTITUTE OF INFORMATION TECHNOLOGY}}\\%[4pt]
+{\bf KOTTAYAM-686635, INDIA}\\%[8pt]
+{\it November 2024}
+
+\end{center}
+
+\end{titlepage}
+
+\clearpage
+% --------------- Declaration  page -----------------------
+\pagenumbering{roman} \setcounter{page}{2}
+\begin{center}
+{\large{\bf{DECLARATION}}}
+\end{center}
+%\thispagestyle{empty}
+
+
+\noindent We, \textbf{Muhamed Yasin(2021BCS0002), Vijay J (2021BCS0101), Abhishek Porwal (2021BCS0029), Vikas Kushwaha (2021BCS0021)} , hereby declare that, this report entitled
+\textbf{``Pose Detection and Landmarking in Classical Performing Arts''} submitted to Indian
+Institute of Information Technology Kottayam towards partial
+requirement of {\bf Bachelor of Technology} in \textbf{Computer Science and Engineering}
+is an original work carried out by me under the supervision of
+\textbf{Dr. Nandini J Warrier} and has not formed the basis for the award
+of any degree or diploma, in this or any other institution or
+university. I have sincerely tried to uphold the academic ethics
+and honesty. Whenever an external information or statement or
+result is used then, that have been duly acknowledged and cited.
+
+\vspace{4cm}
+
+\noindent Kottayam-686635 
+
+\noindent November 2024 \hfill 
+$\begin{array}{l}
+    \textbf{Vijay J (2021BCS0101)} \\
+    \textbf{Muhamed Yasin (2021BCS0002)} \\
+    \textbf{Abishek Porwal (2021BCS0029)} \\
+    \textbf{Vikas Kushwaha (2021BCS0021)}
+\end{array}$
+
+\clearpage
+
+
+% --------------- Certificate page -----------------------
+\pagenumbering{roman} \setcounter{page}{3}
+\begin{center}
+{\large{\bf{CERTIFICATE}}}
+\end{center}
+%\thispagestyle{empty}
+
+
+\noindent This is to certify that the work contained in this
+project report entitled \textbf{``Pose Detection and Landmarking in Classical Performing Arts''}
+submitted by \textbf{Muhamed Yasin(2021BCS0002), Vijay J (2021BCS0101), 
+Abishek Porwal (2021BCS0029), Vikas Kushwaha (2021BCS0021)} to the Indian Institute of Information Technology Kottayam
+towards partial requirement of {\bf Bachelor of
+Technology} in
+\textbf{Indian Institute of Information Technology, Kottayam} has been carried out by them under my
+supervision and that it has not been submitted elsewhere for the
+award of any degree.
+
+
+\vspace{4cm}
+
+\noindent Kottayam-686635  \hfill \textbf{Dr. Nandini J Warrier}
+
+\noindent November  2024 \hfill \textbf{Project Supervisor}
+
+\clearpage
+
+
+
+
+
+% --------------- Acknowledgements Page ---------------
+\begin{center}
+{\Large{\bf{Acknowledgement}}}
+\end{center}
+The thesis would not have been possible without the help and cooperation
+of many. We would like to thank the following people who helped us directly
+or indirectly in these four years of our BTech program.
+First and foremost, we would like to express our gratitude to our project
+supervisor, Dr. Nandini J Warrier, Assistant Professor, Dept. of CSE. As a
+project supervisor, she has inspired us with his research intuition and attitude
+when doing research work. We are extremely grateful for her guidance and
+the high standards of her technical paper review, which made our BTech
+project a productive one.
+We would like to thank our panel members, Dr. Lidiya Lilly Thampi,
+Assistant Professor, Dept. of CSE. Dr. Manu Madhavan, Assistant Professor, Dept. of CSE. for their encouragement and constructive input at various
+stages of our research work.
+We also extend our sincere thanks to all of our friends, colleagues, and family who supported and motivated us throughout the project.
+
+\vspace{4cm}
+
+\noindent Kottayam-686635 
+
+\noindent November 2024 \hfill 
+$\begin{array}{l}
+    \textbf{Vijay J (2021BCS0101)} \\
+    \textbf{Muhamed Yasin (2021BCS0002)} \\
+    \textbf{Abishek Porwal (2021BCS0029)} \\
+    \textbf{Vikas Kushwaha (2021BCS0021)}
+\end{array}$
+
+\clearpage
+
+
+% --------------- Abstract page -----------------------
+\begin{center}
+{\Large{\bf{ABSTRACT}}}
+\end{center}
+
+
+This project presents an automated system for pose detection and classification, specifically designed for traditional performing arts. The system focuses on capturing and analyzing distinct poses and gestures inherent to various classical performances, using Kathakali, a classical art form from Kerala, as a primary example to guide dataset creation and pose analysis.
+
+To support this system, a comprehensive dataset of annotated images is being developed, showcasing characteristic poses, hand gestures, and expressions in Kathakali. Each image and video frame is meticulously labeled to identify key movements, gestures, and costume details, essential for achieving accurate pose classification. This annotated dataset enables the system to interpret sequences of predicted poses, fostering continuity and context within performances. By iterating through pose sequences, the system provides a consistent interpretation of complex movements, which is applicable across different art forms.
+
+This generalized approach aims to support cultural preservation efforts and deepen our understanding of traditional performing arts. The Kathakali dataset, as a foundational example, will further be used to train object detection models. These models will empower the system to recognize and classify poses in real-time, facilitating advanced applications in automated pose analysis for various classical performing arts.
+
+
+\clearpage
+
+
+
+\tableofcontents
+\clearpage
+\listoffigures
+\listoftables
+
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% =========== Main chapters starts here. Type in seperate files and include the filename here. ==
+% ============================
+
+\input chapter1.tex
+
+\input chapter2.tex
+
+\input chapter3.tex
+
+% \input chapter4.tex
+
+\input chapter5.tex
+
+\nocite{bulani2022framework} \nocite{cheng2020higherhrnet}\nocite{haridas2022detection}\nocite{lee2022deep}
+\nocite{shen2024application}
+\nocite{tompson2015efficient}
+\nocite{wang2022application}
+\nocite{wei2016convolutional}
+\nocite{youtube2024kathakali1}
+\nocite{youtube2024kathakali2}
+\nocite{youtube2024kathakali3}
+\bibliographystyle{plain}
+\bibliography{bib}
+
+\end{document}
