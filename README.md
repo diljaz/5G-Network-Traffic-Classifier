@@ -24,3 +24,7 @@ This project aims to classify and project 5G network traffic across multiple int
 4. **Data Storage**: Classified data is stored in an SQL database for efficient querying.
 5. **Visualization**: Grafana connects to the SQL database to create real-time dashboards for traffic analysis.
 
+## Future Enhancements
+- Integrate machine learning for more accurate traffic prediction.
+- Add support for additional 5G traffic types (e.g., IoT, AR/VR).
+- Implement dynamic resource allocation using SDN and NFV.
