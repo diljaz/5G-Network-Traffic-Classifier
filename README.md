@@ -24,8 +24,3 @@ This project aims to classify and project 5G network traffic across multiple int
 4. **Data Storage**: Classified data is stored in an SQL database for efficient querying.
 5. **Visualization**: Grafana connects to the SQL database to create real-time dashboards for traffic analysis.
 
-## Installation and Setup
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/5g-traffic-classifier.git
-   cd 5g-traffic-classifier
